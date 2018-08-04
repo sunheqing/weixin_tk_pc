@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 import tkFont
 import weixin_server.main_server as wxms
 from main_page import main_page
+from utils.screen_center import center_window
 '''
 class weixin_login_page(object):
     def __init__(self, master=None):
@@ -120,6 +121,7 @@ loginButton = tk.Button(text='进入微信', width=10, height=3, font=text_font2
 loginButton.pack()
 loginButton.bind("<Button-1>", new_page)
 loginButton.place(x=120, y=300)
-app.geometry('600x400')
+app.resizable(False, False)
+center_window(app, 600, 400)
 app.title('微信linux客户端')
 app.mainloop()
