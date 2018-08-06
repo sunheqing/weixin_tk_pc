@@ -65,7 +65,6 @@ class weixin_login_page(object):
         loginButton.place(x=120, y=300)
 '''
 
-
 def resize(w_box, h_box, pil_image):
     w, h = pil_image.size
     f1 = 1.0 * w_box / w

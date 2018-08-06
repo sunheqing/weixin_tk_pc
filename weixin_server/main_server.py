@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 from wxpy import *
-import itchat
-def run_weixin():
-    itchat.login()
-    itchat.send('Hello, filehelper', toUserName='filehelper')
 
-def test(event):
-    bot = Bot()
-    my_friend = bot.friends
-    print my_friend
+bot = Bot()
+def get_friends():
+    friend_list = []
+    myFriends = bot.friends()
+    for friend in myFriends[1:]:
+        friend_list.append(friend.name)
+    return friend_list
+
+def send_msg(text_info,friend):
+    get_friend = bot.friends().search(friend)[0]
+    get_friend.send(text_info)
